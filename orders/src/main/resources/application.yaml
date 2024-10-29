@@ -1,8 +1,15 @@
+# YAML configuration file for the Orders Application
+
+# Sets the server port for the Orders application
 server:
-  port: 8082
+  port: 8082  # Orders application will run on port 8082
 
 spring:
   application:
-    name: orders
+    # Application name identifier for the Orders service
+    name: Orders
+
   config:
-    import: configserver:http://localhost:8888/
+    # Specifies that the application will import configuration properties
+    # from a Config Server running at the given URL
+    import: configserver:http://localhost:8888  # URL of the Config Server

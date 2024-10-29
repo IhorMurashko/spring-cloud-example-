@@ -1,15 +1,21 @@
+# YAML configuration file for the Spring Cloud Config Server
+
+# Sets the server port for the Config Server application
 server:
-  port: 8888
+  port: 8888  # Config Server will run on port 8888
 
 spring:
   application:
+    # Application name identifier for the Config Server
     name: config-server
+
   cloud:
     config:
       server:
+        # Git repository where configuration files are stored
         git:
-          uri: https://github.com/IhorMurashko/cloud-config.git
-          username: username
-          password: password
-          default-label: main
-          search-paths: "{application}"
+          uri: https://github.com/IhorMurashko/cloud-config.git  # Repository URL
+          username: username     # Username for repository access (replace with actual username)
+          password: password     # Password for repository access (replace with actual password)
+          default-label: main    # Default Git branch for fetching configuration files
+          search-paths: "{application}"  # Path pattern for application-specific configurations
